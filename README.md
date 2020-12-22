@@ -1,4 +1,4 @@
-# sell
+# Vue Restaurant App
 
 ## Project setup
 ```
