@@ -47,7 +47,7 @@
               </li>
           </ul>
       </div>
-      <Shopcart></Shopcart>
+      <Shopcart :shipping_fee_tip="poiInfo.shipping_fee_tip" :min_price_tip="poiInfo.min_price_tip"></Shopcart>
     </div>
 </template>
 
@@ -63,6 +63,7 @@ export default {
     data () {
         return {
             goods,
+            poiInfo: {},
             container: {},
             menuItems: {},
             listHeight: [],
@@ -76,6 +77,7 @@ export default {
         // console.log(this.goods.data.food_spu_tags);
         this.container = this.goods.data.container_operation_source;
         this.menuItems = this.goods.data.food_spu_tags;
+        that.poiInfo = this.goods.data.poi_info;
 
         // Initiate scroll (doesn't work due to no height value)
         // that.initScroll();
