@@ -103,6 +103,13 @@ ol, ul {
 .goods .food-wrapper .food-list .food-item {
     display: flex;
     margin-bottom: 12px;
+    position: relative;
+}
+
+.goods .food-wrapper .food-list .food-item .cartcontrol-wrapper {
+    position: absolute;
+    right: 14px;
+    bottom: 0;
 }
 
 .goods .food-wrapper .food-list .food-item .icon {

@@ -41,7 +41,9 @@
                                   <span class="unit">/{{ food.unit }}</span>
                               </p>
                           </div>
-                          
+                          <div class="cartcontrol-wrapper">
+                              <CartControl />
+                          </div>
                       </li>
                   </ul>
               </li>
@@ -55,10 +57,12 @@
 import goods from '../../../data/goods.json'
 import BScroll from 'better-scroll'
 import Shopcart from '../Shopcart/Shopcart.vue'
+import CartControl from '../Cartcontrol/CartControl.vue'
 
 export default {
     components: {
-        Shopcart
+        Shopcart,
+        CartControl
     },
     data () {
         return {
