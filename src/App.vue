@@ -11,7 +11,6 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import goods from '../data/goods.json'
 // import ratings from '../data/ratings.json'
 // import seller from '../data/seller.json'

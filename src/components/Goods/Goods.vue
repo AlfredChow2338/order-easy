@@ -13,6 +13,7 @@
                       <img class="icon" :src="menuItem.icon" v-if="menuItem.icon" />
                       {{ menuItem.name }}
                   </p>
+                  <i class="num" v-show="calculateCount(menuItem.spus)">{{calculateCount(menuItem.spus)}}</i>
               </li>
           </ul>
       </div>
@@ -42,14 +43,14 @@
                               </p>
                           </div>
                           <div class="cartcontrol-wrapper">
-                              <CartControl />
+                              <CartControl :food="food" @add-cart="food.count++" @minus-cart="food.count--" />
                           </div>
                       </li>
                   </ul>
               </li>
           </ul>
       </div>
-      <Shopcart :shipping_fee_tip="poiInfo.shipping_fee_tip" :min_price_tip="poiInfo.min_price_tip"></Shopcart>
+      <Shopcart :shipping_fee_tip="poiInfo.shipping_fee_tip" :min_price_tip="poiInfo.min_price_tip" :selectFoods="selectFoods"></Shopcart>
     </div>
 </template>
 
@@ -58,6 +59,7 @@ import goods from '../../../data/goods.json'
 import BScroll from 'better-scroll'
 import Shopcart from '../Shopcart/Shopcart.vue'
 import CartControl from '../Cartcontrol/CartControl.vue'
+// import vue from 'vue'
 
 export default {
     components: {
@@ -78,7 +80,6 @@ export default {
     },
     created() {
         var that = this;
-        // console.log(this.goods.data.food_spu_tags);
         this.container = this.goods.data.container_operation_source;
         this.menuItems = this.goods.data.food_spu_tags;
         that.poiInfo = this.goods.data.poi_info;
@@ -94,6 +95,8 @@ export default {
             // Calculate height between food category
             that.calculateHeight();
         })
+        console.log(this.goods);
+        console.log(this.menuItems[0]);
     },
     computed: {
         currentIndex () {
@@ -110,6 +113,17 @@ export default {
             }
             return 0;
         },
+        selectFoods() {
+            let foods = [];
+            this.menuItems.forEach(good => {
+                good.spus.forEach((food) => {
+                    if(food.count > 0) {
+                        foods.push(food);
+                    }
+                })
+            })
+            return foods;
+        }
     },
     methods: {
         head_bg (imgName) {
@@ -121,7 +135,8 @@ export default {
                 click: true
             });
             this.foodScroll = new BScroll(this.$refs.foodScroll, {
-                probeType: 3
+                probeType: 3,
+                click: true
             });
 
             // Listen scroll event
@@ -151,6 +166,15 @@ export default {
             let el = foodList[index]
 
             this.foodScroll.scrollToElement(el, 250);
+        },
+        calculateCount(spus) {
+            let count = 0;
+            spus.forEach((food) => {
+                if(food.count > 0) {
+                    count += food.count;
+                }
+            });
+            return count;
         }
     }
 }

@@ -38,7 +38,7 @@
     line-height: 50px;
 }
 
-.shopcart .content-left .logo-wrapper .logo.hightlight {
+.shopcart .content-left .logo-wrapper .logo.highlight {
     color: #2d2b2a;
 }
 
@@ -70,8 +70,8 @@
 .shopcart .content-left .desc-wrapper .tip {
     font-size: 12px;
     color: #bab9b9;
-    line-height: 0px;
     margin-left: 8px;
+    margin-top: 16px;
 }
 
 .shopcart .content-left .desc-wrapper .tip.highlight {

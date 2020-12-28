@@ -1,13 +1,13 @@
 <template>
     <div class="shopcart" :class="{'highlight': totalCount>0}">
         <div class="content-left">
-            <div class="logo-wrapper">
+            <div class="logo-wrapper" :class="{'highlight': totalCount>0}">
                 <span class="icon-shopping_cart logo" :class="{'highlight': totalCount>0}"></span>
                 <i class="num" v-show="totalCount">{{totalCount}}</i>
             </div>
             <div class="desc-wrapper">
                 <p class="total-price" v-show="totalPrice">${{totalPrice}}</p>
-                <p class="tip" :class="{'highlight': totalCount>0}">{{shipping_fee_tip}}</p>
+                <p class="tip" v-show="totalPrice" :class="{'highlight': totalCount>0}">{{shipping_fee_tip}}</p>
             </div>
         </div>
         <div class="content-right" :class="{'highlight': totalCount>0}">
@@ -28,19 +28,7 @@ export default {
             default: ''
         },
         selectFoods: {
-            type: Array,
-            default() {
-                return [
-                    {
-                        min_price: 10,
-                        count: 10
-                    },
-                    {
-                        min_price: 7,
-                        count: 5
-                    },
-                ];
-            }
+            type: Array
         }
     },
     computed: {
@@ -65,6 +53,9 @@ export default {
                 return this.min_price_tip;
             }
         }
+    },
+    watch: {
+        
     }
 }
 </script>
