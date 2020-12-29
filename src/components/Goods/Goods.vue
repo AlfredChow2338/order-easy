@@ -28,7 +28,7 @@
                   <h3 class="title">{{ menuItem.name }}</h3>
                   <ul>
                       <li class="food-item" v-for="food in menuItem.spus" :key="food">
-                          <div class="icon" :style="head_bg(food.picture)"></div>
+                          <div class="icon" :style="head_bg(food.picture)" @click="showDetail(food)"></div>
                           <div class="content">
                               <h3 class="name">{{ food.name }}</h3>
                               <p class="desc" v-if="food.description">{{ food.description }}</p>
@@ -51,19 +51,22 @@
           </ul>
       </div>
       <Shopcart :selectFoods="selectFoods" :poiInfo="poiInfo"></Shopcart>
+      <Food :food="selectedFood" ref="foodView"></Food>
     </div>
 </template>
 
 <script>
 import goods from '../../../data/goods.json'
 import BScroll from 'better-scroll'
-import Shopcart from '../Shopcart/Shopcart.vue'
-import CartControl from '../Cartcontrol/CartControl.vue'
+import Shopcart from '../Shopcart/Shopcart'
+import CartControl from '../Cartcontrol/CartControl'
+import Food from '../Food/Food'
 
 export default {
     components: {
         Shopcart,
-        CartControl
+        CartControl,
+        Food
     },
     data () {
         return {
@@ -75,6 +78,7 @@ export default {
             scrollY: 0,
             menuScroll: {},
             foodScroll: {},
+            selectedFood: {},
         }
     },
     created() {
@@ -174,6 +178,10 @@ export default {
                 }
             });
             return count;
+        },
+        showDetail(food) {
+            this.selectedFood = food;
+            this.$refs.foodView.showView();
         }
     }
 }
