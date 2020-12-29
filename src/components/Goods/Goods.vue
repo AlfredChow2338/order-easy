@@ -50,7 +50,7 @@
               </li>
           </ul>
       </div>
-      <Shopcart :shipping_fee_tip="poiInfo.shipping_fee_tip" :min_price_tip="poiInfo.min_price_tip" :selectFoods="selectFoods"></Shopcart>
+      <Shopcart :selectFoods="selectFoods" :poiInfo="poiInfo"></Shopcart>
     </div>
 </template>
 
@@ -59,7 +59,6 @@ import goods from '../../../data/goods.json'
 import BScroll from 'better-scroll'
 import Shopcart from '../Shopcart/Shopcart.vue'
 import CartControl from '../Cartcontrol/CartControl.vue'
-// import vue from 'vue'
 
 export default {
     components: {
@@ -95,8 +94,8 @@ export default {
             // Calculate height between food category
             that.calculateHeight();
         })
-        console.log(this.goods);
-        console.log(this.menuItems[0]);
+        // console.log(this.goods);
+        // console.log(this.menuItems[0]);
     },
     computed: {
         currentIndex () {

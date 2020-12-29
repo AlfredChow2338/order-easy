@@ -154,6 +154,8 @@ ol, ul {
     font-size: 10px;
     line-height: 19px;
     color: #bfbfbf;
+    margin-top: 0;
+    margin-bottom: 0;
 
     /* Exceed display length */
     -webkit-line-clamp: 1;
