@@ -18,10 +18,6 @@
     transform: translateY(100%);
 }
 
-.food-detail .food-wrapper .food-content {
-    
-}
-
 .food-detail .food-wrapper .food-content .img-wrapper {
     position: relative;
     width: 100%;
@@ -207,7 +203,7 @@
 }
 
 .food-detail .rating-wrapper .comment-item .comment-main .time {
-    width: 50px;
+    width: 50%;
     float: right;
     text-align: right;
     font-size: 10px;

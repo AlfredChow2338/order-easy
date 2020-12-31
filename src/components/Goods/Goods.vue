@@ -181,9 +181,7 @@ export default {
         },
         showDetail(food) {
             this.selectedFood = food;
-            console.log(this.$refs.foodView);
             this.$refs.foodView.showView();
-            this.$refs.foodView.initScroll();
         }
     }
 }

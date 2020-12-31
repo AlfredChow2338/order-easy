@@ -3,7 +3,7 @@
 
     <MyHeader :poiInfo="poiInfo"></MyHeader>
     
-    <MyNav></MyNav>
+    <MyNav :commentNum="commentNum"></MyNav>
     
     <router-view></router-view>
 
@@ -12,7 +12,7 @@
 
 <script>
 import goods from '../data/goods.json'
-// import ratings from '../data/ratings.json'
+import ratings from '../data/ratings.json'
 // import seller from '../data/seller.json'
 import MyHeader from './components/Header/Header'
 import MyNav from './components/Nav/Nav'
@@ -29,6 +29,8 @@ export default {
       // header require seller's information
       poiInfo: {},
       goods,
+      ratings,
+      commentNum: 0
     }
   },
   created () { 
@@ -36,13 +38,10 @@ export default {
     if (goods.code === 0) {
       this.poiInfo = goods.data.poi_info;
     }
-  //   axios.get('/api/goods')
-  //   .then((response) => {
-  //     console.log(response);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   })
+    if(ratings.code === 0) {
+      this.commentNum = ratings.data.comment_num;
+      // console.log(this.commentNum);
+    }
   }
 }
 </script>
