@@ -35,15 +35,12 @@ const devWebpackConfig = {
   devServer: {
     before(app){
       app.get('/goods', (req,res) => {
-        // 返回数据给客户端，返回json数据
         res.json(goods);
       }),
       app.get('/ratings', (req,res) => {
-        // 返回数据给客户端，返回json数据
         res.json(ratings);
       }),
       app.get('/seller', (req,res) => {
-        // 返回数据给客户端，返回json数据
         res.json(seller);
       })
     }

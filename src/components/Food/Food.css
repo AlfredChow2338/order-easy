@@ -1,4 +1,4 @@
-.food {
+.food-detail {
     position: fixed;
     top: 0;
     left: 0;
@@ -18,11 +18,11 @@
     transform: translateY(100%);
 }
 
-.food .food-wrapper .food-content {
+.food-detail .food-wrapper .food-content {
     
 }
 
-.food .food-wrapper .food-content .img-wrapper {
+.food-detail .food-wrapper .food-content .img-wrapper {
     position: relative;
     width: 100%;
     height: 0;
@@ -34,7 +34,7 @@
     padding-top: 100%;
 }
 
-.food .food-wrapper .food-content .img-wrapper .food-img {
+.food-detail .food-wrapper .food-content .img-wrapper .food-img {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -42,7 +42,7 @@
     height: 100%;
 }
 
-.food .food-wrapper .food-content .img-wrapper .close-bt {
+.food-detail .food-wrapper .food-content .img-wrapper .close-bt {
     width: 30px;
     height: 30px;
     position: absolute;
@@ -55,7 +55,7 @@
     border-radius: 50%;
 }
 
-.food .food-wrapper .food-content .img-wrapper .share-bt {
+.food-detail .food-wrapper .food-content .img-wrapper .share-bt {
     width: 30px;
     height: 30px;
     position: absolute;
@@ -63,7 +63,7 @@
     right: 50px;
 }
 
-.food .food-wrapper .food-content .img-wrapper .more-bt {
+.food-detail .food-wrapper .food-content .img-wrapper .more-bt {
     width: 30px;
     height: 30px;
     position: absolute;
@@ -71,56 +71,56 @@
     right: 10px;
 }
 
-.food .food-wrapper .food-content .content-wrapper {
+.food-detail .food-wrapper .food-content .content-wrapper {
     padding: 0 0 16px 16px;
     text-align: left;
     position: relative;
 }
 
-.food .food-wrapper .food-content .content-wrapper p,h3 {
+.food-detail .food-wrapper .food-content .content-wrapper p,h3 {
     margin: 0;
 }
 
-.food .food-wrapper .food-content .content-wrapper > .name {
+.food-detail .food-wrapper .food-content .content-wrapper > .name {
     font-size: 15px;
     color: #333333;
     line-height: 30px;
     font-weight: bold;
 }
 
-.food .food-wrapper .food-content .content-wrapper .saled {
+.food-detail .food-wrapper .food-content .content-wrapper .saled {
     color: #9d9d9d;
     font-size: 11px;
     margin-bottom: 6px;
 }
 
-.food .food-wrapper .food-content .content-wrapper .product {
+.food-detail .food-wrapper .food-content .content-wrapper .product {
     height: 15px;
     margin-bottom: 16px;
 }
 
-.food .food-wrapper .food-content .content-wrapper .price {
+.food-detail .food-wrapper .food-content .content-wrapper .price {
     font-size: 0;
 }
 
-.food .food-wrapper .food-content .content-wrapper .price .text {
+.food-detail .food-wrapper .food-content .content-wrapper .price .text {
     color: #fb4e44;
     font-size: 17px;
 }
 
-.food .food-wrapper .food-content .content-wrapper .price .unit {
+.food-detail .food-wrapper .food-content .content-wrapper .price .unit {
     font-size: 11px;
     color: #9d9d9d;
 }
 
-.food .food-wrapper .food-content .content-wrapper .cartcontrol-wrapper {
+.food-detail .food-wrapper .food-content .content-wrapper .cartcontrol-wrapper {
     position: absolute;
     right: 12px;
     bottom: 10px;
     padding: 2px;
 }
 
-.food .food-wrapper .food-content .content-wrapper .buy {
+.food-detail .food-wrapper .food-content .content-wrapper .buy {
     width: 64px;
     height: 30px;
     font-size: 12px;
@@ -131,4 +131,93 @@
     position: absolute;
     right: 12px;
     bottom: 10px;
+}
+
+.food-detail .rating-wrapper {
+    padding-left: 16px;
+}
+
+.food-detail .rating-wrapper .rating-title {
+    padding: 16px 16px 16px 0;
+}
+
+.food-detail .rating-wrapper .rating-title .like-ratio {
+    float: left;
+    font-size: 0;
+}
+
+.food-detail .rating-wrapper .rating-title .like-ratio .title {
+    font-size: 13px;
+}
+
+.food-detail .rating-wrapper .rating-title .like-ratio .ratio {
+    font-size: 11px;
+}
+
+.food-detail .rating-wrapper .rating-title .like-ratio .ratio i {
+    color: #fb4e44;
+    font-size: 11px;
+}
+
+.food-detail .rating-wrapper .rating-title .snd-title {
+    float: right;
+    font-size: 0;
+}
+
+.food-detail .rating-wrapper .rating-title .snd-title .text,
+.food-detail .rating-wrapper .rating-title .snd-title .icon {
+    font-size: 13px;
+    color: #9d9d9d;
+    display: inline-block;
+}
+
+.food-detail .rating-wrapper .rating-title .snd-title .icon {
+    margin-left: 14px;
+}
+
+.food-detail .rating-wrapper .comment-item {
+    padding: 15px 14px 17px 0;
+    border-bottom: 1px solid #f4f4f4;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.food-detail .rating-wrapper .comment-item .comment-header {
+    flex: 0 0 41px;
+    margin-right: 10px;
+}
+
+.food-detail .rating-wrapper .comment-item .comment-header img {
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+}
+
+.food-detail .rating-wrapper .comment-item .comment-main {
+    flex: 1;
+    margin-top: 6px;
+}
+
+.food-detail .rating-wrapper .comment-item .comment-main .user {
+    color: #333333;
+    font-size: 12px;
+    width: 50px;
+    float: left;
+}
+
+.food-detail .rating-wrapper .comment-item .comment-main .time {
+    width: 50px;
+    float: right;
+    text-align: right;
+    font-size: 10px;
+    color: #666666;
+}
+
+.food-detail .rating-wrapper .comment-item .comment-main .content {
+    margin-top: 17px;
+    font-size: 13px;
+    color:#333333;
+    line-height: 19px;
+    text-align: left;
 }
