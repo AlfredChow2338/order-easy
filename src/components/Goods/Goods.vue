@@ -63,6 +63,7 @@ import CartControl from '../Cartcontrol/CartControl'
 import Food from '../Food/Food'
 
 export default {
+    name: 'Goods',
     components: {
         Shopcart,
         CartControl,

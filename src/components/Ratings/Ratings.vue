@@ -49,7 +49,7 @@
           </div>
           <div class="rating-list-wrapper">
             <ul class="rating-list">
-              <li v-for="comment in selectComments" :key="comment" class="comment-item">
+              <li v-for="comment in selectComments" :key="comment" class="comment-item" >
                 <div class="comment-header">
                     <img :src="comment.user_pic_url" v-if="comment.user_pic_url" />
                     <img src="./anonymity.png" v-if="!comment.user_pic_url" />
@@ -85,6 +85,7 @@ const ALL = 2;
 // const COMMENT = 0;
 
 export default {
+  name: 'Ratings',
   data() {
     return {
       Ratings: {},
