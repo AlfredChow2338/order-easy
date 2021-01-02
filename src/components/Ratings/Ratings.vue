@@ -47,7 +47,7 @@
               {{item.content}} {{item.label_count}}
             </span>
           </div>
-          <div class="rating-list-wrapper">
+          <div class="rating-list-wrapper" v-if="selectComments">
             <ul class="rating-list">
               <li v-for="comment in selectComments" :key="comment" class="comment-item" >
                 <div class="comment-header">
