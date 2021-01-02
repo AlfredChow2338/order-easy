@@ -42,7 +42,7 @@
 
       <div class="bg-wrapper" :style="content_bg"></div>
 
-      <transition name="detail">
+      <transition name="bulletin-detail">
         <div class="bulletin-detail" v-show="isShowDetail">
           <div class="detail-wrapper">
             <div class="main-wrapper" :style="detail_bg">
